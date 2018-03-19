@@ -24,6 +24,6 @@ end
 # Plugin middleware to sidekiq automatically
 Sidekiq.configure_server do |config|
   config.server_middleware do |chain|
-    chain.add Middleware
+    chain.add Sidekiq::SkipRetry::Middleware
   end
 end
